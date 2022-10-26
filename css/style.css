@@ -5,13 +5,13 @@ html {
 }
 
 body {
-  color: #333;
-  font-size: 1rem;
+  color:       #333;
+  font-size:   1rem;
   font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
 }
 
 a {
-  color: #333;
+  color:           #333;
   text-decoration: none;
 }
 
@@ -24,53 +24,100 @@ li {
 }
 
 /*
- コンテンツ幅を設定するための共通クラス
+ *コンテンツ幅を設定するための共通クラス
  */
  .wrapper {
   max-width: 1200px;
-  padding: 0 16px;
-  margin: 0 auto;
+  padding:   0 16px;
+  margin:    0 auto;
 }
 
 .readmore {
-  font-size: 0.875rem;
+  font-size:  0.875rem;
   text-align: center;
 }
 
 /*
-疑似要素で下線を設定するために、「position: relative;」を設定
-*/
+ * 疑似要素で下線を設定するために、「position: relative;」を設定
+ */
 .readmore a {
   padding-bottom: 1px;
-  color: #333;
-  position: relative;
+  color:          #333;
+  position:       relative;
 }
 
 /*
-「position: absolute;」を設定し、left、bottomで下線の位置を調整
-widthとheightで線の長さと高さを設定
-疑似要素で線を表示させるためには、「content: '';」を設定すること
-「transition: all 200ms ease;」でホバー時の速度などを設定
-*/
+ *「position: absolute;」を設定し、left、bottomで下線の位置を調整
+ * widthとheightで線の長さと高さを設定
+ * 疑似要素で線を表示させるためには、「content: '';」を設定すること
+ *「transition: all 200ms ease;」でホバー時の速度などを設定
+ */
 .readmore a::after {
-  content: '';
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  content:    '';
+  position:   absolute;
+  height:     1px;
+  width:      100%;
+  left:       0;
+  bottom:     0;
   background: #333;
   transition: all 200ms ease;
 }
 
 /*
-ホバー時の下線の設定
-「opacity: 0;」で下線を非表示に設定
-「transform: translateY(3px);」で下に3px移動
-→下に3px移動しながら下線を非表示にする
-*/
+ * ホバー時の下線の設定
+ *「opacity: 0;」で下線を非表示に設定
+ *「transform: translateY(3px);」で下に3px移動
+ * →下に3px移動しながら下線を非表示にする
+ */
 .readmore a:hover::after {
-  opacity: 0;
+  opacity:   0;
   transform: translateY(3px);
 }
 
+/*-----------------------------------------------------------------------------
+header
+-----------------------------------------------------------------------------*/
+/*
+ * position: fixed; でヘッダーを固定
+ * z-index: 10; で全面に表示
+ * →他のコンテンツでpositionをrelative, absolute, fixedのいずれかに設定している場合、
+ *  indexの数値が大きい方が全面に表示される。
+ */
+#header {
+  width:            100%;
+  background-color: #fff;
+  position:         fixed;
+  z-index:          10;
+}
+
+#header .site-title {
+  padding:     20px 16px;
+  line-height: 1px;
+}
+
+/*
+ *「display: inline-block;」でリンクを親要素の範囲に広げる
+ * (blockを指定すると横幅いっぱいまで広がってしまうため
+ *  inline-blockを設定している)
+ */
+#header .site-title a {
+  display: inline-block;
+}
+#navi {
+  background-color: #333;
+}
+
+#navi a {
+  color: #fff;
+}
+
+#navi ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#navi li {
+  font-size: 0.875rem;
+  padding: 10px 60px 10px 0;
+}
