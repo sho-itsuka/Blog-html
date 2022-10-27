@@ -121,3 +121,24 @@ header
   font-size: 0.875rem;
   padding: 10px 60px 10px 0;
 }
+
+/*-----------------------------------------------------------------------------
+pickup
+-----------------------------------------------------------------------------*/
+
+#pickup {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 150px;
+  margin-bottom: 60px;
+}
+
+#pickup article {
+  width: 32%;
+}
+
+#pickup .article-title {
+  font-size: 1rem;
+  margin: 10px 0 15px 0;
+}
+
