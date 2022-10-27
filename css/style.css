@@ -24,7 +24,7 @@ li {
 }
 
 /*
- *コンテンツ幅を設定するための共通クラス
+ * コンテンツ幅を設定するための共通クラス
  */
  .wrapper {
   max-width: 1200px;
@@ -81,7 +81,7 @@ header
  * position: fixed; でヘッダーを固定
  * z-index: 10; で全面に表示
  * →他のコンテンツでpositionをrelative, absolute, fixedのいずれかに設定している場合、
- *  indexの数値が大きい方が全面に表示される。
+ * indexの数値が大きい方が全面に表示される。
  */
 #header {
   width:            100%;
@@ -98,7 +98,7 @@ header
 /*
  *「display: inline-block;」でリンクを親要素の範囲に広げる
  * (blockを指定すると横幅いっぱいまで広がってしまうため
- *  inline-blockを設定している)
+ * inline-blockを設定している)
  */
 #header .site-title a {
   display: inline-block;
@@ -186,47 +186,130 @@ aside
   width:   33%;
   padding: 20px;
 }
+
 #sidebar .side-title {
   font-size:     1.125rem;
   font-weight:   bold;
   margin-bottom: 30px;
 }
+
 .author {
   text-align:    center;
   margin-bottom: 60px;
 }
+
 .author img {
   width:         130px;
   height:        130px;
   border-radius: 50%;
   margin-bottom: 30px;
 }
+
 .author .profile {
   font-size:  0.875rem;
   text-align: left;
 }
+
 .ranking {
   text-align:    center;
   margin-bottom: 60px;
 }
+
 .ranking article {
   margin-bottom: 30px;
 }
+
 .ranking .article-title {
   font-size:   0.875rem;
   font-weight: normal;
   text-align:  left;
 }
+
 .archive {
   text-align:    center;
   margin-bottom: 60px;
 }
+
 .archive ul {
   border-bottom: solid  1px #777;
 }
+
 .archive li {
   font-size:  0.875rem;
   border-top: solid  1px #777;
   padding:    20px;
   text-align: left;
+}
+
+/*-----------------------------------------------------------------------------
+footer
+-----------------------------------------------------------------------------*/
+#footer {
+  font-size:        0.875rem;
+  background-color: #f7f7f7;
+}
+
+#footer .content {
+  display:         flex;
+  justify-content: space-between;
+  padding-top:     50px;
+  padding-bottom:  50px;
+}
+
+#footer .item {
+  width: 30%;
+}
+
+#footer .footer-title {
+  font-size:     1.125rem;
+  font-weight:   bold;
+  margin-bottom: 30px;
+}
+
+#footer ul.about-list {
+  margin: 20px 0;
+}
+
+#footer ul.about-list li {
+  margin-bottom: 5px;
+}
+
+#footer ul.about-list .arrow {
+  position:     relative;
+  display:      inline-block;
+  padding-left: 12px;
+  color:        #333;
+}
+
+/*
+ * 疑似要素で三角矢印を表示
+ * border～プロパティで三角を作り、positionで位置調整
+ */
+ #footer ul.about-list .arrow::before {
+  content:      '';
+  width:        0;
+  height:       0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #333;
+  position:     absolute;
+  top:          50%;
+  left:         0;
+  margin-top:   -6px;
+}
+
+#footer .menu-list {
+  border-bottom: solid 1px #777;
+}
+
+#footer .menu-list > li {
+  border-top: solid 1px #777;
+  padding:    15px;
+  text-align: left;
+}
+
+#footer .copyright {
+  font-size:  0.750rem;
+  text-align: center;
+  padding:    10px 0;
 }
